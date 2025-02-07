@@ -20,7 +20,7 @@ execute:
 In this short tutorial we will highlight the similarities of R and Python GRASS interfaces
 in order to streamline the use of GRASS GIS within R and Python communities.
 As you may know, there's
-an R package called [rgrass](https://github.com/rsbivand/rgrass/) that provides
+an R package called [rgrass](https://github.com/OSGeo/rgrass/) that provides
 basic functionality to read and write data from and into GRASS database as well
 as to execute GRASS tools in either existing or temporary GRASS projects.
 The [GRASS Python API](https://grass.osgeo.org/grass-stable/manuals/libpython/index.html),
@@ -277,7 +277,7 @@ See R and Python tutorials for more examples:
 ## References
 
 * [GRASS Python API docs](https://grass.osgeo.org/grass-stable/manuals/libpython/index.html)
-* [rgrass docs](https://rsbivand.github.io/rgrass/)
+* [rgrass docs](https://osgeo.github.io/rgrass/)
 
 
 ***

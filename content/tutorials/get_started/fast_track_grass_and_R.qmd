@@ -18,8 +18,8 @@ execute:
 The [**rgrass**](https://cran.r-project.org/web/packages/rgrass/index.html) 
 package allows us to interact with GRASS tools (and data) serving as an
 interface between GRASS GIS and R.
-The *rgrass* package is developed and maintained by Roger Bivand and can be 
-found at: <https://github.com/rsbivand/rgrass/>. In this fast track tutorial, 
+The *rgrass* package source code can be
+found at: <https://github.com/OSGeo/rgrass>. In this fast track tutorial,
 we will learn how to use GRASS GIS from R.
 
 ::: {.callout-note title="Setup"}
@@ -43,7 +43,7 @@ The main functions within **rgrass** are the following:
 
 :::{.callout-note}
 For further details on *rgrass* functionality, usage examples and data format 
-coercion, see: <https://rsbivand.github.io/rgrass/>.
+coercion, see: <https://osgeo.github.io/rgrass/>.
 :::
 
 ## Basic usage: Choose your own adventure
