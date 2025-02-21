@@ -2,6 +2,7 @@
 title: "Get started with GRASS in Jupyter Notebooks on Windows"
 author: "Caitlin Haedrich"
 date: 2024-06-15
+image: images/getting_started_grass_jupyternotebook.png
 date-modified: today
 format:
   html:
