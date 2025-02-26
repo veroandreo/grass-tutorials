@@ -123,3 +123,6 @@ index.tex
 
 # Prevents committing locally rendered site
 docs
+*.Rproj
+*.Rhistory
+.Rproj.user

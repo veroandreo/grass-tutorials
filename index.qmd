@@ -2,7 +2,8 @@
 title: "Learn GRASS GIS"
 listing:
     contents: 
-        - content/tutorials
+        - content/tutorials    
+        - content/tutorials/external/ecodiv.yml
     sort: "date desc"
     type: grid
     categories: true
