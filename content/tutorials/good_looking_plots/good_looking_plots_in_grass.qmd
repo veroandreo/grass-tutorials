@@ -4,14 +4,15 @@ author: "Veronica Andreo"
 date: 2024-04-25
 date-modified: today
 image: images/making_plots.png
-format: 
+format:
+  ipynb: default
   html:
     toc: true
     code-tools: true
     code-copy: true
     code-fold: false
 categories: [statistics, matplotlib, beginner]
-engine: knitr
+engine: jupyter
 execute: 
   eval: false
 ---
