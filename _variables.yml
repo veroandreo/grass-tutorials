@@ -1,0 +1,23 @@
+grass:
+  name: GRASS
+  version: 8.4
+  website: https://grass.osgeo.org
+  support: https://opencollective.com/grass/contribute
+  description: Bringing advanced geospatial technologies to the world
+  founded: 1984
+  docs:
+    website: https://grass.osgeo.org/grass-stable/manuals/
+  logos:
+    green: images/logos/large/grass-green.svg
+    white: images/logos/large/grass-white.svg
+    gradient: images/logos/large/grass-gradient.svg
+    horizontal:
+      green: images/logos/large/grass-green-horizontal.svg
+      white: images/logos/large/grass-white-horizontal.svg
+      gradient: images/logos/large/grass-gradient-horizontal.svg
+  # GRASS icon only without text
+  icons:
+    green: images/logos/large/grass-green-no-text.svg
+    white: images/logos/large/grass-white-no-text.svg
+    gradient: images/logos/large/grass-gradient-no-text.svg
+    

@@ -1,0 +1,1034 @@
+---
+title: GRASS Quarto Design Guide
+description: Adopted from Quarto Documentation
+image: images/LinkedIn-Post-Image.png
+title-block-banner: true
+author:
+    - name: Corey White
+    - name: Sarah White
+date: May 5, 2025
+date-modified: today
+categories: ['design', 'guide', 'styling']
+format: 
+  html:
+    other-links:
+      - text: GRASS Website
+        href: https://grass.osgeo.org
+      - text: Quarto
+        href: https://quarto.org/
+    code-links:
+      - text: Data Import Code
+        icon: file-code
+        href: data-import.py
+    notebook-links: inline
+    code-tools: true
+    code-copy: true
+    code-fold: true
+    code-summary: "Show the code"
+    code-overflow: wrap
+profile: local
+toc: true
+toc-depth: 3
+listing: 
+  - id: lab-reports
+    contents: "*.qmd"
+    type: table
+  - id: meeting-notes
+    contents: "*.qmd"
+    type: grid
+  - id: default-notes
+    contents: "*.qmd"
+    type: default
+citation:
+  type: article-journal
+  container-title: GRASS
+  volume: 1
+  issue: 1
+  issued: 2025-05
+  issn: 0000-0000
+  doi: 10.0000/0000000
+execute:
+  eval: true
+  echo: true
+  output: true
+---
+
+# Components Showcase
+
+This document demonstrates various components available in Quarto.
+
+## Headings
+
+Heading 1 is bolded and used as the title of the page.
+
+# Heading 1
+
+```md
+# Heading 1
+```
+
+Heading 2 is thined and used to introduce a new section or topic within a page.
+
+## Heading 2
+```md
+## Heading 2
+```
+
+Heading 3 is bolded and used to introduce a new subsection or subtopic within a page.
+
+### Heading 3
+
+```md
+### Heading 3
+```
+
+Headings 4, 5 and 6 are inceasing smaller and can be used as need after heading 3.
+
+#### Heading 4
+##### Heading 5
+###### Heading 6
+
+```md
+#### Heading 4
+##### Heading 5
+###### Heading 6
+```
+
+> All heading are enforced as **sentence case**. 
+
+## Text Formatting
+
+**Bold Text**  
+*Italic Text*  
+~~Strikethrough~~  
+`Inline Code`
+
+superscript^2^ / subscript~2~
+
+```md
+**Bold Text**  
+*Italic Text*  
+~~Strikethrough~~  
+`Inline Code`
+
+superscript^2^ / subscript~2~
+```
+
+## Lists
+
+### Ordered List
+1. First item
+2. Second item
+3. Third item
+
+```md
+1. First item
+2. Second item
+3. Third item
+```
+
+### Unordered List
+- Item 1
+- Item 2
+- Item 3
+
+```md
+- Item 1
+- Item 2
+- Item 3
+```
+
+* unordered list
+    + sub-item 1
+    + sub-item 2
+        - sub-sub-item 1
+
+```md
+* unordered list
+    + sub-item 1
+    + sub-item 2
+        - sub-sub-item 1
+```
+
+*   item 2
+
+    Continued (indent 4 spaces)
+
+```md
+*   item 2
+
+    Continued (indent 4 spaces)
+```
+
+(@)  A list which numbering
+
+continues after
+
+(@)  an interruption
+
+```md
+(@)  A list which numbering
+
+continues after
+
+(@)  an interruption
+```
+
+### Tasks
+
+- [ ] Task 1
+- [x] Task 2
+
+```md
+- [ ] Task 1
+- [x] Task 2
+```
+
+## Blockquotes
+
+### `>` Blockquote
+
+> This is a blockquote.  
+> It can span multiple lines.
+
+```md
+> This is a blockquote.  
+> It can span multiple lines.
+```
+
+### Line Block
+
+| Line Block
+|   Spaces and newlines
+|   are preserved
+
+```md
+| Line Block
+|   Spaces and newlines
+|   are preserved
+```
+
+## Footnotes
+
+Here is a footnote reference,[^1] and another.[^longnote]
+
+[^1]: Here is the footnote.
+
+[^longnote]: Here's one with multiple blocks.
+
+    Subsequent paragraphs are indented to show that they
+belong to the previous footnote.
+
+        { some.code }
+
+    The whole paragraph can be indented, or just the first
+    line. In this way, multi-paragraph footnotes work like
+    multi-paragraph list items.
+
+This paragraph won't be part of the note, because it
+isn't indented.
+
+Here is an inline note.^[Inlines notes are easier to write,
+since you don't have to pick an identifier and move down to
+type the note.]
+
+```md
+Here is a footnote reference,[^1] and another.[^longnote]
+
+[^1]: Here is the footnote.
+
+[^longnote]: Here's one with multiple blocks.
+
+    Subsequent paragraphs are indented to show that they
+belong to the previous footnote.
+
+        { some.code }
+
+    The whole paragraph can be indented, or just the first
+    line. In this way, multi-paragraph footnotes work like
+    multi-paragraph list items.
+
+This paragraph won't be part of the note, because it
+isn't indented.
+
+Here is an inline note.^[Inlines notes are easier to write,
+since you don't have to pick an identifier and move down to
+type the note.]
+```
+
+## Tables
+
+### Default
+
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Row 1    | Data 1   | Data 2   |
+| Row 2    | Data 3   | Data 4   |
+
+```md
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Row 1    | Data 1   | Data 2   |
+| Row 2    | Data 3   | Data 4   |
+```
+
+### Column Aligned
+
+| Default | Left | Right | Center |
+|---------|:-----|------:|:------:|
+| 12      | 12   |    12 |   12   |
+| 123     | 123  |   123 |  123   |
+| 1       | 1    |     1 |   1    |
+
+```md
+| Default | Left | Right | Center |
+|---------|:-----|------:|:------:|
+| 12      | 12   |    12 |   12   |
+| 123     | 123  |   123 |  123   |
+| 1       | 1    |     1 |   1    |
+```
+
+### Pipe Format
+
+
+fruit| price
+-----|-----:
+apple|2.05
+pear|1.37
+orange|3.09
+
+: Demonstration of pipe table syntax
+
+```md
+fruit| price
+-----|-----:
+apple|2.05
+pear|1.37
+orange|3.09
+
+: Demonstration of pipe table syntax
+```
+
+### Pipe Format Striped
+
+| fruit  | price  |
+|--------|--------|
+| apple  | 2.05   |
+| pear   | 1.37   |
+| orange | 3.09   |
+
+: Fruit prices {.striped .hover}
+
+```md
+| fruit  | price  |
+|--------|--------|
+| apple  | 2.05   |
+| pear   | 1.37   |
+| orange | 3.09   |
+
+: Fruit prices {.striped .hover}
+```
+
+### Pipe Format Custom Col widths
+
+| fruit  | price  |
+|--------|--------|
+| apple  | 2.05   |
+| pear   | 1.37   |
+| orange | 3.09   |
+
+: Fruit prices {tbl-colwidths="[75,25]"}
+
+```md
+| fruit  | price  |
+|--------|--------|
+| apple  | 2.05   |
+| pear   | 1.37   |
+| orange | 3.09   |
+
+: Fruit prices {tbl-colwidths="[75,25]"}
+```
+
+### Grid Table
+
++-----------+-----------+--------------------+
+| Fruit     | Price     | Advantages         |
++===========+===========+====================+
+| Bananas   | $1.34     | - built-in wrapper |
+|           |           | - bright color     |
++-----------+-----------+--------------------+
+| Oranges   | $2.10     | - cures scurvy     |
+|           |           | - tasty            |
++-----------+-----------+--------------------+
+
+: Sample grid table.
+
+```md
++-----------+-----------+--------------------+
+| Fruit     | Price     | Advantages         |
++===========+===========+====================+
+| Bananas   | $1.34     | - built-in wrapper |
+|           |           | - bright color     |
++-----------+-----------+--------------------+
+| Oranges   | $2.10     | - cures scurvy     |
+|           |           | - tasty            |
++-----------+-----------+--------------------+
+
+: Sample grid table.
+```
+
+## Cross Reference
+
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| A    | B    | C    |
+| E    | F    | G    |
+| A    | G    | G    |
+
+: My Caption {#tbl-letters}
+
+See @tbl-letters.
+
+```md
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| A    | B    | C    |
+| E    | F    | G    |
+| A    | G    | G    |
+
+: My Caption {#tbl-letters}
+
+See @tbl-letters.
+```
+
+### Subtables
+
+::: {#tbl-panel layout-ncol=2}
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| A    | B    | C    |
+| E    | F    | G    |
+| A    | G    | G    |
+
+: First Table {#tbl-first}
+
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| A    | B    | C    |
+| E    | F    | G    |
+| A    | G    | G    |
+
+: Second Table {#tbl-second}
+
+Main Caption
+:::
+
+See @tbl-panel for details, especially @tbl-second.
+
+```md
+::: {#tbl-panel layout-ncol=2}
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| A    | B    | C    |
+| E    | F    | G    |
+| A    | G    | G    |
+
+: First Table {#tbl-first}
+
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| A    | B    | C    |
+| E    | F    | G    |
+| A    | G    | G    |
+
+: Second Table {#tbl-second}
+
+Main Caption
+:::
+
+See @tbl-panel for details, especially @tbl-second.
+```
+
+## Links & Images
+
+### Links
+
+[GRASS Website]({{< var grass.website >}})
+
+```md
+[GRASS Website]({{< var grass.website >}})
+```
+
+### Images
+
+![Width 25%]({{< var grass.logos.horizontal.gradient >}}){width=25%}
+
+```md
+![Width 25%]({{< var grass.logos.horizontal.gradient >}}){width=25%}
+```
+
+![Width 50%]({{< var grass.logos.horizontal.gradient >}}){width=50%}
+
+```md
+![Width 50%]({{< var grass.logos.horizontal.gradient >}}){width=50%}
+```
+
+![Width 75%]({{< var grass.logos.horizontal.gradient >}}){width=75%}
+
+```md
+![Width 75%]({{< var grass.logos.horizontal.gradient >}}){width=75%}
+```
+
+![Width 100%]({{< var grass.logos.horizontal.gradient >}}){width=100%}
+
+```md
+![Width 100%]({{< var grass.logos.horizontal.gradient >}}){width=100%}
+```
+
+### Image Link
+
+[![Caption]({{< var grass.logos.gradient >}}){width=20%}]({{< var grass.website >}})
+
+```md
+[![Caption]({{< var grass.logos.gradient >}}){width=20%}]({{< var grass.website >}})
+```
+
+### Image Link with Alt-Text
+[![Caption]({{< var grass.logos.gradient >}} "Alt text"){width=20%}]({{< var grass.website >}})
+
+```md
+[![Caption]({{< var grass.logos.gradient >}} "Alt text"){width=20%}]({{< var grass.website >}})
+```
+
+### Aligned Images
+
+![Aligned Left]({{< var grass.logos.gradient >}} "Alt text"){width=20% fig-align="left"}
+![Aligned Right]({{< var grass.logos.gradient >}} "Alt text"){width=20% fig-align="right"}
+
+```md
+![Aligned Left]({{< var grass.logos.gradient >}} "Alt text"){width=20% fig-align="left"}
+![Aligned Right]({{< var grass.logos.gradient >}} "Alt text"){width=20% fig-align="right"}
+```
+
+### Lightbox
+![Lightbox]({{< var grass.logos.gradient >}} "Alt text"){width=20% fig-align="center" .lightbox}
+
+```md
+![Lightbox]({{< var grass.logos.gradient >}} "Alt text"){width=20% fig-align="center" .lightbox}
+```
+
+### Placeholders
+
+{{< placeholder 400 200 format=svg >}}
+
+```md
+<!-- Uses placeholder shortcode -->
+{{< placeholder 400 200 format=svg >}}
+```
+
+## Callouts
+
+Note that there are five types of callouts, including: 
+`note`, `tip`, `warning`, `caution`, and `important`.
+
+### Note
+
+::: {.callout-note}
+This is a note callout.
+:::
+
+```md
+::: {.callout-note}
+This is a note callout.
+:::
+```
+
+### Tip
+
+::: {.callout-tip}
+This is a tip callout.
+:::
+
+```md
+::: {.callout-tip}
+This is a tip callout.
+:::
+```
+
+### Warning
+
+::: {.callout-warning}
+This is a warning callout.
+:::
+
+```md
+::: {.callout-warning}
+This is a warning callout.
+:::
+```
+
+### Important
+
+::: {.callout-important}
+This is an important callout.
+:::
+
+```md
+::: {.callout-important}
+This is an important callout.
+:::
+```
+
+### Caution
+
+::: {.callout-caution}
+This is a caution callout.
+:::
+
+```md
+::: {.callout-caution}
+This is a caution callout.
+:::
+```
+
+### Collapsable Callout
+
+::: {.callout-caution collapse="true"}
+## Expand To Learn About Collapse
+This is a caution callout.
+:::
+
+```md
+::: {.callout-caution collapse="true"}
+## Expand To Learn About Collapse
+This is a caution callout.
+:::
+```
+
+## Math
+
+### Inline
+Inline math: $E = mc^2$
+
+### Block
+
+Block math:  
+$$
+\int_a^b f(x) dx = F(b) - F(a)
+$$
+
+## Buttons
+
+### Solid Color
+
+[Primary](#){.btn .btn-primary .btn role="button"}
+[Secondary](#){.btn .btn-secondary .btn role="button"}
+[Success](#){.btn .btn-success .btn role="button"}
+[Danger](#){.btn .btn-danger .btn role="button"}
+[Warning](#){.btn .btn-warning .btn role="button"}
+[Info](#){.btn .btn-info .btn role="button"}
+[Light](#){.btn .btn-light .btn role="button"}
+[Dark](#){.btn .btn-dark .btn role="button"}
+[Link](#){.btn .btn-link .btn role="button"}
+
+
+
+```md
+[Primary](#){.btn .btn-primary .btn role="button"}
+[Secondary](#){.btn .btn-secondary .btn role="button"}
+[Success](#){.btn .btn-success .btn role="button"}
+[Danger](#){.btn .btn-danger .btn role="button"}
+[Warning](#){.btn .btn-warning .btn role="button"}
+[Info](#){.btn .btn-info .btn role="button"}
+[Light](#){.btn .btn-light .btn role="button"}
+[Dark](#){.btn .btn-dark .btn role="button"}
+[Link](#){.btn .btn-link .btn role="button"}
+```
+
+### Outline Color
+
+[Primary Outline](#){.btn .btn-outline-primary .btn role="button"}
+[Secondary Outline](#){.btn .btn-outline-secondary .btn role="button"}
+[Success Outline](#){.btn .btn-outline-success .btn role="button"}
+[Danger Outline](#){.btn .btn-outline-danger .btn role="button"}
+[Warning Outline](#){.btn .btn-outline-warning .btn role="button"}
+[Info Outline](#){.btn .btn-outline-info .btn role="button"}
+[Light Outline](#){.btn .btn-outline-light .btn role="button"}
+[Dark Outline](#){.btn .btn-outline-dark .btn role="button"}
+[Link Outline](#){.btn .btn-outline-link .btn role="button"}
+
+```md
+[Primary Outline](#){.btn .btn-outline-primary .btn role="button"}
+[Secondary Outline](#){.btn .btn-outline-secondary .btn role="button"}
+[Success Outline](#){.btn .btn-outline-success .btn role="button"}
+[Danger Outline](#){.btn .btn-outline-danger .btn role="button"}
+[Warning Outline](#){.btn .btn-outline-warning .btn role="button"}
+[Info Outline](#){.btn .btn-outline-info .btn role="button"}
+[Light Outline](#){.btn .btn-outline-light .btn role="button"}
+[Dark Outline](#){.btn .btn-outline-dark .btn role="button"}
+[Link Outline](#){.btn .btn-outline-link .btn role="button"}
+```
+
+### Special Buttons
+
+We have custom support buttons ([More Info](#includes)) that link to GRASS's [Open Collective page]({{< var grass.support >}})
+
+{{< include /content/include/_support-button.qmd >}}
+{{< include /content/include/_support-outline-button.qmd >}}
+
+## Alerts
+
+::: {.alert .alert-success}
+This is a success alert.
+:::
+
+```md
+::: {.alert .alert-success}
+This is a success alert.
+:::
+```
+
+::: {.alert .alert-danger}
+This is a danger alert.
+:::
+
+```md
+::: {.alert .alert-danger}
+This is a danger alert.
+:::
+```
+
+## Code Blocks with Syntax Highlighting
+
+### Default
+
+```default
+code
+```
+
+### Python
+```python
+# Comment
+import sys
+import subprocess
+
+sys.path.append(
+    subprocess.check_output(["grass", "--config", "python_path"], text=True).strip()
+)
+
+import grass.script as gs
+import grass.jupyter as gj
+```
+
+### Terminal
+```bash
+grass "~/grassdata/" --exec script.py 
+```
+
+### R
+```r
+library(rgrass)
+
+session <- initGRASS(gisBase = "/usr/lib/grass84", # where grass binaries live, `grass --config path`
+                     gisDbase = "/home/user/grassdata", # path to grass database or folder where your project lives
+                     location = "nc_basic_spm_grass7", # existing project name
+                     mapset = "PERMANENT" # mapset name
+                     )
+
+```
+
+## Tabsets
+
+::: {.panel-tabset}
+## R
+
+``` {.r}
+execGRASS(
+  "r.slope.aspect",
+  parameters = list(
+    elevation = "elevation",
+    slope = "slope",
+    aspect="aspect"
+  )
+)
+```
+
+## Python
+
+``` {.python}
+gs.run_command(
+  "r.slope.aspect",
+  elevation = "elevation",
+  slope = "slope",
+  aspect="aspect"
+)
+```
+
+:::
+
+```md
+::: {.panel-tabset}
+
+Your panel content here
+
+:::
+```
+
+For more information about tabsets refer to the Quarto Docs [here](https://quarto.org/docs/output-formats/html-basics.html#tabsets)
+
+## Raw Content
+
+```{=html}
+<iframe src="https://grass.osgeo.org/" width="500" height="400"></iframe>
+```
+
+```md
+\```{=html}
+<iframe src="https://grass.osgeo.org/" width="500" height="400"></iframe>
+```\
+```
+
+## Diagrams
+
+### Flowchart
+```{mermaid}
+flowchart LR
+  A[Hard edge] --> B(Round edge)
+  B --> C{Decision}
+  C --> D[Result one]
+  C --> E[Result two]
+```
+
+### Sequence Diagram
+```{mermaid}
+sequenceDiagram
+  participant Alice
+  participant Bob
+  Alice->>John: Hello John, how are you?
+  loop Healthcheck
+    John->>John: Fight against hypochondria
+  end
+  Note right of John: Rational thoughts <br/>prevail!
+  John-->>Alice: Great!
+  John->>Bob: How about you?
+  Bob-->>John: Jolly good!
+```
+
+### Dot
+
+```{dot}
+graph G {
+  layout=neato
+  run -- intr;
+  intr -- runbl;
+  runbl -- run;
+  run -- kernel;
+  kernel -- zombie;
+  kernel -- sleep;
+  kernel -- runmem;
+  sleep -- swap;
+  swap -- runswap;
+  runswap -- new;
+  runswap -- runmem;
+  new -- runmem;
+  sleep -- runmem;
+}
+```
+
+## Videos
+
+Use the [video shortcode](https://quarto.org/docs/authoring/videos.html)
+
+{{< video https://www.youtube.com/embed/zboP3Z7VBuU >}}
+
+## Page Break
+
+page 1
+
+{{< pagebreak >}}
+
+page 2
+
+## Divs & Spans
+
+### Border
+
+::: {.border}
+This content can be styled with a border
+:::
+
+```md
+::: {.border}
+This content can be styled with a border
+:::
+```
+
+### Spans
+
+[This is *some text*]{.class key="val"}
+
+```md
+[This is *some text*]{.class key="val"}
+```
+
+<span class="custom-span">This is a custom span.</span>
+
+```md
+<span class="custom-span">This is a custom span.</span>
+```
+
+### Span Styling
+
+#### Small Caps
+
+[smallcaps]{.smallcaps}
+
+```md
+[smallcaps]{.smallcaps}
+```
+
+#### Underline
+
+[underlined]{.underline}
+
+```md
+[underlined]{.underline}
+```
+
+#### Highlight
+
+[highlighted]{.mark}
+
+```
+[highlighted]{.mark}
+```
+
+### Order of Attribute
+
+The order of attribute for divs and spans follow rules defined in the [pandoc](https://pandoc.org/MANUAL.html#divs-and-spans) documentation.
+
+#### Good
+
+```md
+[Good]{#id .class key="val"}
+```
+
+#### Bad
+
+```md
+[This is *some text*]{.class key="val"}
+```
+
+## Keyboard Shortcuts
+
+The [kbd]{.text-success} shortcode can be used to describe keyboard shortcuts in documentation.
+
+```md {.markdown shortcodes="false"}
+To print, press {{< kbd Shift-Ctrl-P >}}. 
+To open an existing new project, 
+press {{< kbd mac=Shift-Command-O win=Shift-Control-O linux=Shift-Ctrl-L >}}.
+```
+
+To print, press {{< kbd Shift-Ctrl-P >}}. 
+To open an existing new project, press {{< kbd mac=Shift-Command-O win=Shift-Control-O linux=Shift-Ctrl-L >}}.
+
+## Listing
+
+### Table
+
+:::{#lab-reports}
+:::
+
+### Grid
+
+:::{#meeting-notes}
+:::
+
+### Default
+:::{#default-notes}
+:::
+
+## Layout
+
+### Column Full screen inset
+::: {.column-screen-inset}
+![A full screen image](images/LinkedIn-Post-Image.png)
+:::
+
+### Column Full screen shaded inset
+::: {.column-shaded-screen-inset}
+![A full screen image](images/LinkedIn-Post-Image.png)
+:::
+
+### Column Margin
+::: {.column-margin}
+![An image in the margin](images/LinkedIn-Post-Image.png)
+:::
+
+## Lipsum
+
+Lipsum shortcode docs found [here](https://quarto.org/docs/authoring/lipsum.html).
+
+### Single Paragraph
+{{< lipsum 1 >}}
+
+### Multi Paragraph
+{{< lipsum 2 random=true >}}
+
+# Custom
+
+Quarto supports several shortcodes natively which allow us to access project varibles.
+
+| Shortcode                                                     | Description                              |
+|---------------------------------------------------------------|------------------------------------------|
+| [var](https://quarto.org/docs/authoring/variables.html#va)                      | Print value from `_variables.yml` file   |
+| [meta](https://quarto.org/docs/authoring/variables.html#meta)                    | Print value from document metadata       |
+| [env](https://quarto.org/docs/authoring/variables.html#env)                      | Print system environment variable        |
+
+: More info found at [https://quarto.org/docs/authoring/](https://quarto.org/docs/authoring/).
+
+## Variables
+
+You can access variables located in `_variables.yml` using pre-defined [varible shortcodes](https://quarto.org/docs/authoring/variables.html).
+
+``` {.markdown shortcodes="false"}
+{{< var grass.version >}}
+```
+
+Will render {{< var grass.version >}}
+
+## Includes
+
+The include [shortcode](https://quarto.org/docs/authoring/includes.html) allows us to use reusable markdown. 
+
+### Support Button
+
+`{{< include /content/include/_support-button.qmd >}}`
+
+renders to
+
+``` {.markdown shortcodes="false"}
+{{< include /content/include/_support-button.qmd >}}
+```
+
+which renders to the content of `/content/include/_support-button.qmd`
+
+``` {.markdown shortcodes="true"}
+{{< include /content/include/_support-button.qmd >}}
+```
+
+and finally displays
+
+{{< include /content/include/_support-button.qmd >}}
+
+## Brand
+
+Brand data is defined in the `_brand.yml` file.
+
+### Logo small light
+
+``` {.markdown shortcodes="false"}
+{{< brand logo small light >}}
+```
+
+{{< brand logo small light >}}

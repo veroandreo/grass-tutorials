@@ -1,0 +1,5 @@
+project:
+  type: website
+  title: "(Local) Learn GRASS"
+  render: 
+    - "content/tests/*.qmd"

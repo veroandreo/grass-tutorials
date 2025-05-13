@@ -37,6 +37,8 @@ jobs:
 
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
+        env:
+          QUARTO_PROFILE: production
 
       - name: Upload static files as artifact
         uses: actions/upload-pages-artifact@v3

@@ -1,0 +1,6 @@
+project:
+  render: 
+    - "*.qmd"
+    - "!content/tests/"
+execute:
+  freeze: false

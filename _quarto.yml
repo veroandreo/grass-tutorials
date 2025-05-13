@@ -1,13 +1,16 @@
 project:
   type: website
   output-dir: docs
+  render: 
+    - "*.qmd"
 website:
-  favicon: images/logos/grass-favicon-16x16.png
+  site-url: "https://grass-tutorials.osgeo.org"
+  favicon: images/favicon.ico
+  twitter-card: true
+  open-graph: true
   navbar:
-    title: "Learn GRASS"
-    background: primary
+    title: Learn GRASS
     search: true
-    logo: "images/logos/grass-favicon-white-32x32.png"
     tools:
       - icon: github
         menu:
@@ -20,30 +23,49 @@ website:
       Partially supported by US NSF
       [![](/images/logos/NSF_Official_logo_100x100.png){fig-alt="NSF" width=45px}](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2303651)
     center: Content is dual-licensed under [GFDL-1.2-or-later](https://www.gnu.org/licenses/fdl-1.2.html) and [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+    # Quarto does not support the icon tag to use FontAwesome.
+    # The workaround is to use the fa icon in the text.
+    # We do this for consistency with the rest of the sites.
+    # https://github.com/quarto-ext/fontawesome/issues/6
     right:
-      - icon: github
-        href: https://github.com/OSGeo/grass
-        aria-label: GRASS on GitHub
-      - icon: chat-fill
-        href: https://discourse.osgeo.org/c/grass/62
-        aria-label: GRASS on Discourse
-      - icon: mastodon
+      - icon: opencollective
+        href: https://opencollective.com/grass/contribute
+        aria-label: GRASS on Open Collective
+      - text: "{{< fa brands gitter >}}"
+        href: https://gitter.im/grassgis/community
+        aria-label: GRASS on Gitter
+      - text: "{{< fa brands mastodon >}}"
         href: https://fosstodon.org/@grassgis
         aria-label: GRASS on Mastodon
-      - icon: twitter-x
+      - text: "{{< fa brands discourse >}}"
+        href: https://discourse.osgeo.org/c/grass/62
+        aria-label: GRASS on Discourse
+      - text: "{{< fa brands linkedin >}}"
+        href: "https://linkedin.com/company/grass-gis"
+        aria-label: GRASS on LinkedIn
+      - text: "{{< fa brands x-twitter >}}"
         href: https://x.com/grassgis
         aria-label: GRASS on X
-      - icon: facebook
-        href: https://www.facebook.com/groups/GRASS
-        aria-label: GRASS on Facebook
-      - icon: youtube
+      - text: "{{< fa brands youtube >}}"
         href: https://www.youtube.com/@grass-gis
         aria-label: GRASS on YouTube
+      - text: "{{< fa brands github >}}"
+        href: https://github.com/OSGeo/grass
+        aria-label: GRASS on GitHub
+
+  margin-header	: |
+    [{{< fa heart >}} Support GRASS]({{< var grass.support >}}){.btn .btn-outline-support .btn role="button" align="center"}
+
 execute:
   freeze: auto
 format:
   html:
-    theme: [pandoc, theme.scss]
+    theme: [pandoc, brand, theme.scss]
     toc: true
     toc-title: Table of Contents
     link-external-newwindow: true
+
+brand: _brand.yml
+profile:
+  default: local
+  

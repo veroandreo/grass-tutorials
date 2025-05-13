@@ -1,0 +1,42 @@
+meta:
+  name:
+    full: GRASS
+    short: GRASS
+  link:
+    home: https://grass.osgeo.org
+    docs: https://grass.osgeo.org/grass-stable/manuals/
+  description: |
+    Bringing advanced geospatial technologies to the world
+  founded: 1984
+
+# https://posit-dev.github.io/brand-yml/brand/logo.html
+# https://sc.edu/about/offices_and_divisions/digital-accessibility/toolbox/best_practices/alternative_text/logo-alt-text/index.php
+logo:
+  images: 
+    logo-small-no-text-light:
+      path: ../../images/logos/small/grass-logo-white-simple@05x.png
+      alt: "Small sized GRASS icon colored white with GRASS shape"
+    logo-small-no-text-dark:
+      path: ../../images/logos/small/grass-logo-green-simple@05x.png
+      alt: "Small sized GRASS icon colored GRASS green with GRASS shape"
+    logo-medium-no-text-light:
+      path: ../../images/logos/medium/grass-logo-white-simple@1x.png
+      alt: "Medium sized GRASS icon colored white with GRASS shape"
+    logo-medium-no-text-dark:
+      path: ../../images/logos/medium/grass-logo-green-simple@1x.png
+      alt: "Medium sized GRASS icon colored GRASS green with GRASS shape"
+    logo-large-no-text-light:
+      path: ../../images/logos/large/grass-white-no-text.svg
+      alt: "Large vector (svg) GRASS icon colored white with GRASS shape"
+    logo-large-no-text-dark:
+      path: ../../images/logos/large/grass-green-no-text.svg
+      alt: "Large vector (svg) GRASS icon colored GRASS green with GRASS shape"
+  small:
+    light: logo-small-no-text-light
+    dark: logo-small-no-text-dark
+  medium:
+    light: logo-medium-no-text-light
+    dark: logo-medium-no-text-dark
+  large:
+    light: logo-large-no-text-light
+    dark: logo-large-no-text-dark

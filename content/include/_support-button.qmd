@@ -1,0 +1,2 @@
+<!-- Custom button for contributing to GRASS -->
+[{{< fa heart >}} Support]({{< var grass.support >}}){.btn .btn-support .btn role="button"}

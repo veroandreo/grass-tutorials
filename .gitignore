@@ -120,6 +120,7 @@ index.ipynb
 index.md
 index_files/
 index.tex
+/_*.local
 
 # Prevents committing locally rendered site
 docs
