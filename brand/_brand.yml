@@ -14,22 +14,22 @@ meta:
 logo:
   images: 
     logo-small-no-text-light:
-      path: ../../images/logos/small/grass-logo-white-simple@05x.png
+      path: ../images/logos/small/grass-logo-white-simple@05x.png
       alt: "Small sized GRASS icon colored white with GRASS shape"
     logo-small-no-text-dark:
-      path: ../../images/logos/small/grass-logo-green-simple@05x.png
+      path: ../images/logos/small/grass-logo-green-simple@05x.png
       alt: "Small sized GRASS icon colored GRASS green with GRASS shape"
     logo-medium-no-text-light:
-      path: ../../images/logos/medium/grass-logo-white-simple@1x.png
+      path: ../images/logos/medium/grass-logo-white-simple@1x.png
       alt: "Medium sized GRASS icon colored white with GRASS shape"
     logo-medium-no-text-dark:
-      path: ../../images/logos/medium/grass-logo-green-simple@1x.png
+      path: ../images/logos/medium/grass-logo-green-simple@1x.png
       alt: "Medium sized GRASS icon colored GRASS green with GRASS shape"
     logo-large-no-text-light:
-      path: ../../images/logos/large/grass-white-no-text.svg
+      path: ../images/logos/large/grass-white-no-text.svg
       alt: "Large vector (svg) GRASS icon colored white with GRASS shape"
     logo-large-no-text-dark:
-      path: ../../images/logos/large/grass-green-no-text.svg
+      path: ../images/logos/large/grass-green-no-text.svg
       alt: "Large vector (svg) GRASS icon colored GRASS green with GRASS shape"
   small:
     light: logo-small-no-text-light

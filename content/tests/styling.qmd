@@ -992,10 +992,10 @@ Quarto supports several shortcodes natively which allow us to access project var
 You can access variables located in `_variables.yml` using pre-defined [varible shortcodes](https://quarto.org/docs/authoring/variables.html).
 
 ``` {.markdown shortcodes="false"}
-{{< var grass.version >}}
+{{< var grass.website >}}
 ```
 
-Will render {{< var grass.version >}}
+Will render {{< var grass.website >}}
 
 ## Includes
 
@@ -1021,14 +1021,3 @@ and finally displays
 
 {{< include /content/include/_support-button.qmd >}}
 
-## Brand
-
-Brand data is defined in the `_brand.yml` file.
-
-### Logo small light
-
-``` {.markdown shortcodes="false"}
-{{< brand logo small light >}}
-```
-
-{{< brand logo small light >}}

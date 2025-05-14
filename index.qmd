@@ -1,10 +1,6 @@
 ---
 title: "Learn GRASS"
 listing:
-    - id: tests
-      contents:
-        - content/tests/styling.qmd
-      type: grid   
     - id: get-started
       contents: content/tutorials/get_started
       type: grid
@@ -33,10 +29,4 @@ title-block-banner: false
 
 ## All Tutorials
 :::{#all}
-:::
-
-::: {.content-visible when-profile="local"}
-## Tests
-:::{#tests}
-:::
 :::

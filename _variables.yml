@@ -1,6 +1,5 @@
 grass:
   name: GRASS
-  version: 8.4
   website: https://grass.osgeo.org
   support: https://opencollective.com/grass/contribute
   description: Bringing advanced geospatial technologies to the world

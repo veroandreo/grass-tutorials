@@ -127,3 +127,6 @@ docs
 *.Rproj
 *.Rhistory
 .Rproj.user
+
+/.luarc.json
+

@@ -65,7 +65,6 @@ format:
     toc-title: Table of Contents
     link-external-newwindow: true
 
-brand: _brand.yml
+brand: brand/_brand.yml
 profile:
   default: local
-  
