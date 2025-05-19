@@ -9,7 +9,7 @@ format:
     code-copy: true
     code-fold: false
 categories: [beginner, intermediate, GUI, Python, course, external]
-description: A course on GIS for landscape architects, urban planners, and other designers
+description: A course on GIS for landscape architects, urban planners, and other designers using GRASS.
 execute: 
   eval: false
 ---

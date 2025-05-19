@@ -9,13 +9,10 @@ format:
     code-copy: true
     code-fold: false
 categories: [external, beginner, intermediate, R, ecology, rgrass, Python, time series]
+description: Series of tutorials on time series processing for environmental modeling delivered at OpenGeoHub summer school 2019.
 execute: 
   eval: false
 ---
-
-This is a series of tutorials on GRASS GIS for environmental modeling delivered at OpenGeoHub 2019.
-
-Authors: Verónica Andreo
 
 # Time series processing for environmental monitoring
 <https://github.com/veroandreo/grass_opengeohub2019/blob/master/pdf/tgrass_lst.pdf>

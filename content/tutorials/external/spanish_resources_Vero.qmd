@@ -1,5 +1,5 @@
 ---
-title: "Teledeteccion, OBIA y series de tiempo"
+title: "Teledetección, OBIA y series de tiempo"
 lang: es
 date: 01/01/2021
 author: Verónica Andreo
@@ -10,19 +10,17 @@ format:
     code-copy: true
     code-fold: false
 categories: [beginner, intermediate, external, Spanish]
-description: Procesamiento y análisis de datos espaciales en GRASS GIS
+description: Curso de postgrado sobre procesamiento y análisis de datos satelitales y series temporales con GRASS.
 execute: 
   eval: false
 ---
 
-Este taller abordará el procesamiento y análisis de datos
-espacio-temporales con uno de los Sistemas de Información Geográfica (SIG) de código abierto más populares: GRASS GIS 7 .
+Curso de postgrado dictado en la Universidad Nacional de Córdoba (UNC) que aborda el procesamiento de datos satelitales y series de tiempo
+para el modelado y análisis ecológicos y ambientales utilizando GRASS.
 
-Durante este taller los participantes obtendrán una visión general de las capacidades de GRASS GIS y experiencia práctica en procesamiento de datos raster, vectoriales y series de tiempo de productos satelitales para análisis ecológicos y ambientales.
+El curso es mayormente práctico y puede ejecutarse completamente con Jupyter Notebooks en Google Colab.
 
-El taller está dirigido a profesionales y técnicos con experiencia en el área de la geomática que quieran abordar una introducción al software GRASS GIS para realizar procesamiento y análisis de datos espaciales.
-
-<https://gitlab.com/veroandreo/maie-procesamiento/-/tree/taller-grass-online>
+<https://veroandreo.github.io/curso-grass-gis/>
 
 Autora: Dra. Verónica Andreo
 

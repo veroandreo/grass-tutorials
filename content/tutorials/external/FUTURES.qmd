@@ -9,7 +9,7 @@ format:
     code-copy: true
     code-fold: false
 categories: [advanced, Python, R, external]
-description: This workshop introduces GRASS GIS and FUTURES urban growth modeling framework
+description: This workshop introduces GRASS and the FUTURES urban growth modeling framework.
 execute: 
   eval: false
 ---

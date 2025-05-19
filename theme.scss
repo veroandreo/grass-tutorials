@@ -612,6 +612,11 @@ ul.pagination li.active a {
   color: $gs-secondary-alt-color;
 }
 
+/* Hide description on tutorial pages */
+.quarto-title-block .description {
+  display: none;
+}
+
 /* Table of Contents
 -----------------------------------------------------------------------------*/
 .sidebar nav[role=doc-toc]>h2 {

@@ -9,6 +9,7 @@ format:
     code-copy: true
     code-fold: false
 categories: [course, external, beginner, intermediate]
+description: Geospatial Modeling and Analysis course taught at NCSU. Several topics are covered with GRASS.
 execute: 
   eval: false
 ---
