@@ -12,6 +12,7 @@ format:
     code-copy: true
     code-fold: false
 categories: [statistics, matplotlib, beginner]
+description: Quick review of tools to make plots for raster, vector and time series data in GRASS.
 engine: jupyter
 execute: 
   eval: false

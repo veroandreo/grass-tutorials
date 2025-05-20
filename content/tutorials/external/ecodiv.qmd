@@ -9,7 +9,7 @@ format:
     code-copy: true
     code-fold: false
 categories: [beginner, intermediate, advanced, GUI, Python, R, external, ecology, statistics, visualization, biodiversity]
-description: GRASS tutorials on ecology and biogeography topics
+description: GRASS tutorials on ecology and biogeography topics.
 execute: 
   eval: false
 ---
