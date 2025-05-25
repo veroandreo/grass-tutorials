@@ -1,8 +1,9 @@
 ---
-title: "Time series: Subset, import and export"
+title: "Time series subset, import and export"
 author: "Veronica Andreo"
 date: 2024-08-19
 date-modified: today
+image: images/export_with_change.png
 lightbox: true
 format:
   ipynb: default
@@ -226,7 +227,7 @@ gs.run_command("t.rast.out.xyz",
 
 ## Import
 
-There are two tools to import raster time series into GRASS GIS:
+There are two tools to import raster time series into GRASS:
 
 * [t.rast.import](https://grass.osgeo.org/grass-stable/manuals/t.rast.import.html) imports strds that were exported with *t.rast.export*. It allows to create a new GRASS project with the imported data CRS and set the computational region to the raster maps imported.
 * [t.rast.import.netcdf](https://grass.osgeo.org/grass-stable/manuals/addons/t.rast.import.netcdf.html) imports the content of one or more netCDF files that adhere to the CF convention into a strds. Data can be imported or linked via [r.external](https://grass.osgeo.org/grass-stable/manuals/r.external.html).
