@@ -47,11 +47,11 @@ Here are the available tutorials, ordered to guide you from basic to more advanc
 7. **[Temporal subset, import and export](./time_series_extraction.qmd)**  
    Subset time series by date, and learn how to import/export space-time datasets effectively.
 
-## 🧭 What's Next?
+<!-- ## 🧭 What's Next?
 
 You can also explore related categories:
 
-- [Raster analysis](https://grass-tutorials.osgeo.org/#category=raster)
-- [Python scripting](https://grass-tutorials.osgeo.org/#category=Python)
+- [Raster analysis](index.qmd#category=raster)
+- [Python scripting](index.qmd#category=Python)
 
-Or [return to the home page](https://grass-tutorials.osgeo.org/) to browse all tutorials.
+Or [return to the home page](index.qmd) to browse all tutorials. -->
