@@ -46,11 +46,11 @@ It's a matter of taste, task on hand and habit, too.
 
 ![GRASS Graphical User Interface and terminal](images/grass_gui_first_time_and_cli_combined.png){width=60%  fig-align="center"}
 
-GRASS GUI has a single window layout by default, but it is also possible to 
+The GRASS GUI has a single window layout by default, but it is also possible to 
 minimize and/or dock/undock the panels. On the left, you can find the **data** 
 browser which allows you to navigate through your projects and data, and the 
 **layers** panel showing displayed layers. The panel in the middle is the 
-**map display**. You can add additional ones if you need using 
+**map display**. You can add additional map displays if you need using 
 ![](images/monitor-create.png). Finally, on the right there are multiple tabs 
 where you can find a searchable **tools' tree** similar to the Processing 
 toolbox in QGIS, a **console** where you can type GRASS commands, 
