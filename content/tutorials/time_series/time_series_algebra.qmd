@@ -3,7 +3,7 @@ title: "Time series algebra"
 author: "Veronica Andreo"
 date: 2024-07-24
 date-modified: today
-image: images/trento.png
+image: images/month_of_max_lst.png
 lightbox: true
 format:
   ipynb: default
@@ -103,14 +103,14 @@ import subprocess
 
 # Ask GRASS where its Python packages are
 sys.path.append(
-    subprocess.check_output([grassbin, "--config", "python_path"], text=True).strip()
+    subprocess.check_output(["grass", "--config", "python_path"], text=True).strip()
 )
 
 # Import the GRASS packages we need
 import grass.script as gs
 import grass.jupyter as gj
 
-path_to_project = "eu_laea/italy_LST_daily"
+path_to_project = "italy_eu_laea/italy_LST_daily"
 
 # Start the GRASS session
 session = gj.init(path_to_project);
@@ -137,7 +137,8 @@ for me in methods:
     gs.run_command("t.rast.series",
                    input="lst_daily",
                    method=me,
-                   output=f"lst_{me}")
+                   output=f"lst_{me}",
+                   nprocs=6)
 ```
 
 and then the annual LST average:
@@ -185,6 +186,12 @@ anomalies.d_legend(color="black", at=(5, 50, 2, 6))
 anomalies.show()
 ```
 
+```{python}
+# Save animation
+anomalies.save("anomalies.gif")
+```
+
+![Animation of standardized anomalies](images/anomalies.gif)
 
 ## Month with maximum LST
 
@@ -220,7 +227,7 @@ gs.run_command("t.rast.mapcalc",
 
 ```{python}
 # Get basic info
-print(gs.read_command("t.info", input="month_min_lst"))
+print(gs.read_command("t.info", input="month_max_lst"))
 ```
 
 Now we can aggregate our sparse time series to obtain the earliest month in 
@@ -231,7 +238,8 @@ which the maximum LST occurred.
 gs.run_command("t.rast.series",
                input="month_max_lst",
                method="minimum",
-               output="max_lst_date")
+               output="max_lst_date",
+               nprocs=6)
 ```
 
 We remove the intermediate time series as we were only interested in the
@@ -258,66 +266,15 @@ Let's display the result using the `Map` class from `grass.jupyter` package:
 ```{python}
 mm = gj.Map()
 mm.d_rast(map="max_lst_date")
-mm.d_vect(map="italy", type="boundary", color="#4D4D4D", width=2)
-mm.d_legend(raster="max_lst_date", title="Month", fontsize=10, at=(2,15,2,10))
-mm.d_barscale(length=50, units="kilometers", segment=4, fontsize=14, at=(73,7))
-mm.d_northarrow(at=(90,15))
+mm.d_vect(map="italy_borders_0", type="boundary", color="#4D4D4D", width=2)
+mm.d_legend(raster="max_lst_date", title="Month", fontsize=12, at=(2, 35, 1, 20), border_color="white", flags="b")
+mm.d_barscale(length=50, units="kilometers", segment=4, fontsize=14, at=(80, 8))
+mm.d_northarrow(at=(95, 19))
 mm.d_text(text="Month of maximum LST", color="black", font="sans", size=4, bgcolor="white")
 mm.show()
 ```
 
-::: {.callout-caution title="Question"}
-How could we have done the same in one single step? 
-Hint: `t.rast.algebra ... method=during`.
-
-```{python}
-# Get time series with month of maximum LST
-expression="month_max_lst = if({during}, lst_daily == tmap(lst_maximum), start_month(), null())"
-
-gs.run_command("t.rast.algebra",
-               basename="month_max_lst",
-               expression=expression,
-               suffix="gran",
-               nprocs=6)
-```
-
-Is it really the same?
-
-```{python}
-expression="result = max_lst_date - month_max_lst"
-gs.rast_mapcalc(exp=expression)
-gs.raster_info("result")
-```
-
-:::
-
-What if we are interested in knowing the week number in which the annual maximum 
-LST occurs each year? How would you do that? Can we also know if there's any 
-trend in the week number? i.e., does it tend to happen earlier or later?
-
-```{python}
-# Estimate annual max LST
-gs.run_command("t.rast.aggregate",
-              input="lst_daily",
-              output="lst_max_annual",
-              basename="lst_max",
-              method="maximum",
-              granularity="1 years",
-              suffix=gran)
-
-# Week number
-exp="week_lst_max_annual = if({contains}, lst_max_annual == lst_daily, start_week(lst_daily))"
-gs.run_command("t.rast.algebra",
-              expression=exp,
-              basename="week_lst_max_annual",
-              suffix="gran") 
-
-# Is there a trend?
-gs.run_command("t.rast.series",
-              input="week_lst_max_annual",
-              method="slope",
-              output="slope_week_lst_max_annual")
-```
+![Month of maximum LST value](images/month_of_max_lst.png)
 
 
 ## Number of days with LST >= 20 and <= 30
@@ -335,17 +292,17 @@ within this range per year, and then, we'll estimate the median along years.
 expression="lst_higher20_lower30 = if(lst_daily >= 20.0 && lst_daily <= 30.0, 1, null())"
 
 gs.run_command("t.rast.algebra",
-               expression=expression, 
+               expression=expression,
                basename="lst_higher20_lower30",
                suffix="gran",
-               nproc=6, 
+               nproc=6,
                flags="n")
 ```
 
 ```{python}
 # Count how many times per year the condition is met
 gs.run_command("t.rast.aggregate",
-               input="lst_higher20_lower30", 
+               input="lst_higher20_lower30",
                output="count_lst_higher20_lower30",
                basename="count_lst_higher20_lower30",
                suffix="gran",
@@ -355,23 +312,23 @@ gs.run_command("t.rast.aggregate",
 
 ```{python}
 # Check raster maps in the STRDS
-gs.run_command("t.rast.list", 
-               input="count_lst_higher20_lower30", 
+gs.run_command("t.rast.list",
+               input="count_lst_higher20_lower30",
                columns="name,start_time,min,max")
 ```
 
 ```{python}
 # Median number of days with average lst >= 20 and <= 30
 gs.run_command("t.rast.series",
-               input="count_tmean_higher20_lower30",
-               output="median_count_tmean_higher20_lower30",
+               input="count_lst_higher20_lower30",
+               output="median_count_lst_higher20_lower30",
                method="median")
 ```
 
 ```{python}
 # Display raster map with interactive class
 h20_map = gj.InteractiveMap()
-h20_map.add_raster("median_count_tmean_higher20_lower30")
+h20_map.add_raster("median_count_lst_higher20_lower30")
 h20_map.show()
 ```
 
@@ -383,7 +340,7 @@ is changing along the years?
 ## Number of consecutive days with LST <= -10.0
 
 Likewise, there are temperature thresholds that mark a limit to insects survival.
-Here, we'll use the lowest temperature threshold to survival. Most importantly, 
+Here, we'll use the lowest temperature threshold. Most importantly, 
 we we'll count the number of consecutive days with temperatures below this 
 threshold.
 
@@ -428,7 +385,7 @@ gs.run_command("t.rast.algebra",
                expression=expression,
                basename="lower_m10",
                suffix="gran",
-               nproc=7)
+               nproc=6)
 ```
 
 ```{python}
