@@ -1,5 +1,5 @@
 ---
-title: "Time series algebra"
+title: "Temporal algebra"
 author: "Veronica Andreo"
 date: 2024-07-24
 date-modified: today
@@ -13,7 +13,7 @@ format:
     code-copy: true
     code-fold: false
 categories: [time series, raster, advanced, Python]
-description: Demostrate the use of GRASS temporal algebra tools to estimate anomalies and phenology related variables.
+description: Demonstrate the use of GRASS temporal algebra tools to estimate anomalies and phenology related variables.
 engine: jupyter
 execute:
   eval: false
