@@ -11,7 +11,7 @@ format:
     code-tools: true
     code-copy: true
     code-fold: false
-categories: [time series, raster, advanced, Python]
+categories: [time series, raster, intermediate, advanced, Python]
 description: "A collection of tutorials demonstrating how to handle time series data in GRASS, from basic concepts to advanced spatiotemporal analysis."
 engine: jupyter
 execute:
@@ -47,11 +47,3 @@ Here are the available tutorials, ordered to guide you from basic to more advanc
 7. **[Temporal subset, import and export](./time_series_extraction.qmd)**  
    Subset time series by date, and learn how to import/export space-time datasets effectively.
 
-<!-- ## 🧭 What's Next?
-
-You can also explore related categories:
-
-- [Raster analysis](index.qmd#category=raster)
-- [Python scripting](index.qmd#category=Python)
-
-Or [return to the home page](index.qmd) to browse all tutorials. -->
